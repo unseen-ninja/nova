@@ -1,0 +1,263 @@
+@property --gradient-angle {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 120deg;
+}
+
+
+
+@property --grape {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 40.014% 108.495 309.59 );
+}
+
+@property --grape-tint {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 44.014% 106.495 310.59 );
+}
+
+@property --grape-shade {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 36.014% 110.495 308.59 );
+}
+
+
+
+@property --raspberry {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 57.859% 97.892 326.222 );
+}
+
+@property --raspberry-tint {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 61.859% 95.892 327.222 );
+}
+
+@property --raspberry-shade {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 53.859% 99.892 325.222 );
+}
+
+
+
+@property --peach {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 71.881% 40.541 32.926 );
+}
+
+@property --peach-tint {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 75.881% 38.541 33.926 );
+}
+
+@property --peach-shade {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 67.881% 42.541 32.926 );
+}
+
+
+
+@property --lemon {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 94.17% 75.545 100.177 );
+}
+
+@property --lemon-tint {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 98.17% 73.545 101.177 );
+}
+
+@property --lemon-shade {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 90.17% 77.545 99.177 );
+}
+
+
+
+@property --pear {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 89.96% 79.92 115.45 );
+}
+
+@property --pear-tint {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 93.96% 77.92 116.45 );
+}
+
+@property --pear-shade {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 85.96% 81.92 114.45 );
+}
+
+
+
+@property --lychee {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 94.314% 2.996 284.311 );
+}
+
+@property --lychee-tint {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 98.314% 0.996 285.311 );
+}
+
+@property --lychee-shade {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 90.314% 4.996 283.311 );
+}
+
+
+
+@property --blackberry {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 9.116% 7.269 287.344 );
+}
+
+@property --blackberry-tint {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 13.116% 5.269 288.344 );
+}
+
+@property --blackberry-shade {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: lch( 5.116% 9.269 286.344 );
+}
+
+
+
+:root {
+
+  --grape-gradient: linear-gradient(
+    var(--gradient-angle),
+    var(--grape-tint),
+    var(--grape-shade)
+  );
+
+  --raspberry-gradient: linear-gradient(
+    var(--gradient-angle),
+    var(--raspberry-tint),
+    var(--raspberry-shade)
+  );
+
+  --peach-gradient: linear-gradient(
+    var(--gradient-angle),
+    var(--peach-tint),
+    var(--peach-shade)
+  );
+
+  --lemon-gradient: linear-gradient(
+    var(--gradient-angle),
+    var(--lemon-tint),
+    var(--lemon-shade)
+  );
+
+  --pear-gradient: linear-gradient(
+    var(--gradient-angle),
+    var(--pear-tint),
+    var(--pear-shade)
+  );
+
+  --lychee-gradient: linear-gradient(
+    var(--gradient-angle),
+    var(--lychee-tint),
+    var(--lychee-shade)
+  );
+
+  --blackberry-gradient: linear-gradient(
+    var(--gradient-angle),
+    var(--blackberry-tint),
+    var(--blackberry-shade)
+  );
+
+  --lemonade-gradient: linear-gradient(
+    var(--gradient-angle),
+    var(--lemon),
+    var(--peach) 40%,
+    var(--raspberry)
+  );
+
+
+
+  --primary: light-dark(var(--grape), var(--peach));
+  --primary-tint: light-dark(var(--grape-tint), var(--peach-tint));
+  --primary-shade: light-dark(var(--grape-shade), var(--peach-shade));
+  --primary-gradient: linear-gradient(
+    var(--gradient-angle),
+    var(--primary-tint),
+    var(--primary-shade)
+  );
+
+  --secondary: var(--raspberry);
+  --secondary-tint: var(--raspberry-tint);
+  --secondary-shade: var(--raspberry-shade);
+  --secondary-gradient: linear-gradient(
+    var(--gradient-angle),
+    var(--secondary-tint),
+    var(--secondary-shade)
+  );
+
+  --tertiary: light-dark(var(--peach), var(--lemon));
+  --tertiary-tint: light-dark(var(--peach-tint), var(--lemon-tint));
+  --tertiary-shade: light-dark(var(--peach-shade), var(--lemon-shade));
+  --tertiary-gradient: linear-gradient(
+    var(--gradient-angle),
+    var(--tertiary-tint),
+    var(--tertiary-shade)
+  );
+
+
+
+  --background-colour: light-dark(var(--lychee), var(--blackberry));
+  --background-colour-tint: light-dark(var(--lychee-tint), var(--blackberry-tint));
+  --background-colour-shade: light-dark(var(--lychee-shade), var(--blackberry-shade));
+  --background-gradient: light-dark(var(--lychee-gradient), var(--blackberry-gradient));
+  --background-colour-muted: light-dark(
+    color-mix(
+      in oklch,
+      var(--lychee),
+      10% var(--blackberry)
+    ),
+    color-mix(
+      in oklch,
+      var(--blackberry),
+      10% var(--lychee)
+    )
+  );
+
+
+  --text-colour: light-dark(var(--blackberry), var(--lychee));
+  --text-colour-muted: light-dark(
+    color-mix(
+      in oklch,
+      var(--blackberry),
+      33% var(--lychee)
+    ),
+    color-mix(
+      in oklch,
+      var(--lychee),
+      33% var(--blackberry)
+    )
+  );
+
+}

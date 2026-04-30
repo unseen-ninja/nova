@@ -1,0 +1,21 @@
+---
+import { SITE_AUTHOR } from "@data/consts"
+
+const today = new Date()
+---
+
+
+
+<footer>
+  <p>{today.getFullYear()} — {SITE_AUTHOR}</p>
+</footer>
+
+
+
+<style lang="scss">
+  footer {
+    margin-block-start: 4.8rem; padding-block: 2.4rem;
+    font-size: 0.8em;
+    text-align: center;
+  }
+</style>

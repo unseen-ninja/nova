@@ -1,0 +1,99 @@
+---
+import { Icon } from "astro-icon/components"
+
+import Layout from "@layouts/Default.astro"
+import MetaData from "@components/MetaData.astro"
+import { SITE_TITLE, SITE_DESCRIPTION } from "@data/consts"
+---
+
+
+
+<Layout>
+  <MetaData
+    slot="head:metadata"
+    title=`${SITE_TITLE} – An opinionated Astro starter template`
+    description={SITE_DESCRIPTION}
+  />
+
+  <main class="content-grid">
+
+    <h1>What the fork<sup>*</sup> is <span class="text-lemonade">Nova</span>?</h1>
+    <p>Nova is an opinionated starter template for <a href="https://astro.build">Astro</a>. I've noticed that every time I created a new project I took the same steps over and over again to get started – kind of a time waster. Luckily Astro allows users to specify their own templates during the setup. Well.. and here we are: No more manual setup; It's all here by default!</p>
+    <p>
+      Is Nova the right template for you? Most likely not.<br />
+      Can you use it anyway? You're more than welcome to. <Icon name="ph:heart-fill" color="var(--grape)" />
+    </p>
+    <p>
+      <small>*<i>that's a git joke btw.</i></small>
+    </p>
+
+    <h2 class="center-icon">What's in the box? <Icon name="ph:package-bold" /></h2>
+
+    <section aria-labelledby="integrations-headline">
+      <h3 id="integrations-headline">Integrations</h3>
+      <p>Besides the regular Astro stuff Nova includes the following integrations:</p>
+      <ul>
+        <li><a href="https://docs.astro.build/en/guides/integrations-guide/mdx/">Astro MDX</a></li>
+        <li><a href="https://docs.astro.build/en/guides/integrations-guide/sitemap/">Astro Sitemap</a></li>
+        <li><a href="https://www.astroicon.dev/">Astro Icon</a> (plus <a href="https://phosphoricons.com/">Phosphor Icons</a>)</li>
+      </ul>
+    </section>
+
+    <section class="full-width example-full-width" aria-labelledby="layout-headline">
+      <h3 id="layout-headline">Layout Stuff</h3>
+      <p>The layout is pretty simple. The only thing you need to know about is the <code>.content-grid</code>. This wrapper creates padding-columns on the left and right, as well as two content-columns in the center.</p>
+      <p>By default all content will be placed in the inner column but you can break this layout by applying <code>.breakout</code> to an element. You can also force an element to span the entire page using <code>.full-width</code> which will mirror the grid-setup inside itself. <i>Take this entire section as an example.</i></p>
+
+<pre class="breakout faux-syntax-highlight"><code><span class="muted">&lt;</span><span class="peach">section</span> class=<span class="lemon">&quot;breakout&quot;</span><span class="muted">&gt;</span>
+  <span class="muted">&lt;/</span><span class="peach">p</span><span class="muted">&gt;</span>This is a breakout element.<span class="muted">&lt;/</span><span class="peach">p</span><span class="muted">&gt;</span>
+<span class="muted">&lt;/</span><span class="peach">section</span><span class="muted">&gt;</span>
+</code></pre>
+    </section>
+
+    <section aria-labelledby="components-headline">
+      <h3 id="components-headline">Components</h3>
+      <p>Nova only includes a single component by default – but it's an important one as it handles all the relevant <code>&lt;meta&gt;</code> tags. Only <code>title</code> and <code>description</code> are mandatory props but the component also handles OpenGraph and Twitter Card meta tags. Other accepted props are: <code>author</code>, <code>type</code>, <code>image</code> and <code>colour</code>.</p>
+
+<pre class="faux-syntax-highlight"><code><span class="muted">---</span>
+import <span class="raspberry">MetaData</span> from <span class="grape">&quot;@components/MetaData.astro&quot;</span>
+<span class="muted">---</span>
+
+<span class="muted">&lt;</span><span class="raspberry">MetaData</span>
+  slot=<span class="grape">&quot;head:metadata&quot;</span>
+  title=<span class="grape">&quot;Lorem Ipsum&quot;</span>
+  description=<span class="grape">&quot;Lorem Ipsum dolor sit happens&hellip;&quot;</span>
+<span class="muted">/&gt;</span>
+</code></pre>
+    </section>
+
+  </main>
+</Layout>
+
+
+
+<style>
+  .center-icon {
+    display: flex;
+    align-items: center;
+    gap: .2em;
+  }
+
+  .example-full-width {
+    margin-block: 1em; padding: 1.6rem;
+    background-color: var(--background-colour-muted);
+    color: var(--text-colour);
+
+    pre, code {
+      background-color: var(--blackberry);
+      color: var(--lychee);
+    }
+  }
+
+  .faux-syntax-highlight {
+    .muted { opacity: .4; }
+    .grape { color: var(--grape) }
+    .raspberry { color: var(--raspberry) }
+    .peach { color: var(--peach) }
+    .lemon { color: var(--lemon) }
+  }
+</style>

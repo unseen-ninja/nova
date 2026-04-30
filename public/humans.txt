@@ -1,0 +1,23 @@
+# This is Me!
+  Name: Lemon
+  From: Germany
+  Contact: lemon [at] unseen.ninja
+  Mastodon: https://nerdculture.de/@unseendotninja
+  Bluesky: https://bsky.app/profile/unseen.ninja
+  GitHub: https://github.com/unseen-ninja
+
+
+# Built with Astro
+  I absolutely love you people!
+  https://astro.build/
+
+
+--------------------
+
+# What is this file?
+  Humans.txt is a text file that provides information about the
+  people who have contributed to the creation of a website. It
+  is a way for website owners to give credit to the individuals
+  who have worked on the site and to provide contact information
+  for those individuals.
+  More info here: https://humanstxt.org/

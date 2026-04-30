@@ -1,0 +1,102 @@
+---
+import { Font } from "astro:assets"
+
+import "@styles/palette.scss"
+import "@styles/typography.scss"
+
+import { SITE_LOCALE } from "@data/consts"
+
+import Footer from "@layouts/partials/Footer.astro"
+import Header from "@layouts/partials/Header.astro"
+---
+
+
+
+<!doctype html>
+<html lang={SITE_LOCALE}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <Font cssVariable="--font-figtree" preload />
+
+    <slot name="head:metadata" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta name="darkreader-lock" />
+    <link type="text/plain" rel="author" href="/humans.txt" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+
+
+<style lang="scss" is:global>
+  :root {
+    --transition-duration: .2s;
+    --transition-easing: ease-in-out;
+  }
+
+
+  html { color-scheme: light; }
+
+  body {
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    font-family: var(--font-figtree);
+    margin: 0; padding: 0;
+    min-height: 100dvh;
+    background-color: var(--colour-background);
+  }
+
+
+  .content-grid {
+    --padding: clamp(1.6rem, 5vw, 4.8rem);
+    --max-content: 80ch;
+    --max-breakout: 100ch;
+
+    --breakout: calc((var(--max-breakout) - var(--max-content)) / 2);
+
+    display: grid;
+    grid-template-columns:
+      [full-width-start] minmax(var(--padding), 1fr)
+      [breakout-start] minmax(0, var(--breakout))
+      [content-start] min(100% - (var(--padding) * 2), var(--max-content))
+      [content-end]
+      minmax(0, var(--breakout)) [breakout-end]
+      minmax(var(--padding), 1fr) [full-width-end];
+    grid-auto-rows: min-content;
+    grid-auto-flow: row dense;
+  }
+
+  .content-grid > :not(.breakout, .full-width),
+  .full-width > :not(.breakout, .full-width) {
+    container-type: inline-size;
+    grid-column: content;
+  }
+
+  .content-grid > .breakout,
+  .full-width > .breakout {
+    container-type: inline-size;
+    grid-column: breakout;
+  }
+
+  .content-grid > .full-width {
+    grid-column: full-width;
+    display: grid;
+    grid-template-columns: inherit;
+  }
+
+  img.full-width {
+    width: 100%;
+    max-height: 45vh;
+    object-fit: cover;
+  }
+</style>

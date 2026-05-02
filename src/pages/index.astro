@@ -21,7 +21,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "@data/consts"
     <p>Nova is an opinionated starter template for <a href="https://astro.build">Astro</a>. I've noticed that every time I created a new project I took the same steps over and over again to get started – kind of a time waster. Luckily Astro allows users to specify their own templates during the setup. Well.. and here we are: No more manual setup; It's all here by default!</p>
     <p>
       Is Nova the right template for you? Most likely not.<br />
-      Can you use it anyway? You're more than welcome to. <Icon name="ph:heart-fill" color="var(--grape)" />
+      Can you use it anyway? You're more than welcome to. <Icon class="inline-icon" name="ph:heart-fill" color="var(--grape)" />
     </p>
     <p>
       <small>*<i>that's a git joke btw.</i></small>
@@ -77,6 +77,8 @@ import <span class="raspberry">MetaData</span> from <span class="grape">&quot;@c
     align-items: center;
     gap: .2em;
   }
+
+  .inline-icon { display: inline; }
 
   .example-full-width {
     margin-block: 1em; padding: 1.6rem;

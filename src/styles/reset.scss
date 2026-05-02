@@ -1,0 +1,82 @@
+@layer reset {
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  html {
+    color-scheme: light dark;
+    scrollbar-gutter: stable;
+    font-size: 62.5%;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+      interpolate-size: allow-keywords;
+    }
+  }
+
+  html, body {
+    margin: 0; padding: 0;
+  }
+
+  body {
+    font: 2rem/1.2 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+    hyphens: auto;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    overflow-wrap: break-word;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  input, button, textarea, select {
+    font: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+  }
+
+  button, [type="button"], [type="reset"], [type="submit"] {
+    appearance: button;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-inline-size: 100%; block-size: auto;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+}

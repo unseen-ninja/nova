@@ -9,6 +9,8 @@ import { SITE_LOCALE } from "@data/consts"
 
 import Footer from "@layouts/partials/Footer.astro"
 import Header from "@layouts/partials/Header.astro"
+
+import SkipLink from "@components/SkipLink.astro"
 ---
 
 
@@ -31,6 +33,7 @@ import Header from "@layouts/partials/Header.astro"
   </head>
 
   <body>
+    <SkipLink />
     <Header />
     <slot />
     <Footer />
@@ -54,7 +57,7 @@ import Header from "@layouts/partials/Header.astro"
     font-family: var(--font-figtree);
     margin: 0; padding: 0;
     min-height: 100dvh;
-    background-color: var(--colour-background);
+    background-color: var(--background-colour);
   }
 
 
